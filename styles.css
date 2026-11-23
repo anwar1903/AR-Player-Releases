@@ -214,7 +214,7 @@ code {
   color: var(--text-muted);
 }
 
-/* Mock Player Window */
+/* Mock Player Window (v1.4.0) */
 .preview-window {
   text-align: left;
   border-radius: 16px;
@@ -224,9 +224,34 @@ code {
   box-shadow: 0 28px 70px rgba(0, 0, 0, 0.65);
 }
 
+.preview-menubar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 12px;
+  background: rgba(10, 10, 15, 0.94);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  user-select: none;
+}
+
+.preview-menu-item {
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 3px 9px;
+  border-radius: 4px;
+  cursor: default;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.preview-menu-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
 .preview-top-hud {
-  padding: 12px 18px;
-  background: rgba(14, 14, 20, 0.72);
+  padding: 10px 18px;
+  background: rgba(14, 14, 20, 0.78);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
@@ -260,27 +285,13 @@ code {
 
 .preview-pills {
   display: flex;
+  align-items: center;
   gap: 8px;
-}
-
-.mini-pill {
-  font-size: 0.75rem;
-  padding: 4px 10px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.09);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--text-secondary);
-}
-
-.mini-pill.active {
-  border-color: var(--accent);
-  background: rgba(249, 115, 22, 0.22);
-  color: #fff;
 }
 
 .preview-stage {
   position: relative;
-  height: 250px;
+  height: 245px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -320,7 +331,7 @@ code {
 
 .preview-bottom-hud {
   padding: 12px 18px 14px;
-  background: rgba(14, 14, 20, 0.82);
+  background: rgba(14, 14, 20, 0.84);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
@@ -362,23 +373,59 @@ code {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 7px;
 }
 
-.mock-btn,
-.mock-select {
-  font-size: 0.76rem;
-  padding: 5px 11px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.09);
+.mock-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: var(--text-primary);
+  cursor: default;
+  transition: background 0.15s ease, border-color 0.15s ease;
 }
 
-.mock-btn.primary {
+.mock-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.mock-icon-btn.primary {
   background: var(--accent);
   border-color: var(--accent);
+  color: #ffffff;
+  min-width: 38px;
+}
+
+.mock-icon-btn.active {
+  background: rgba(249, 115, 22, 0.22);
+  border-color: var(--border-accent);
+  color: #fdba74;
+}
+
+.icon-count-badge {
+  font-size: 0.74rem;
   font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.mock-select {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  font-size: 0.76rem;
+  padding: 0 11px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-primary);
 }
 
 /* Sections */
